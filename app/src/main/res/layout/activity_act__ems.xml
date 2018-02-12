@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lyr.microfit_waist.Act_EMS"
+    tools:context="com.example.lyr.microfit_waist.Home.Act_EMS"
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"

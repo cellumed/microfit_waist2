@@ -15,7 +15,6 @@ import com.example.lyr.microfit_waist.R;
 public class SplashActivity extends AppCompatActivity {
 
     private final int SPLASH_DISPLAY_LENGTH = 1000;
-    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

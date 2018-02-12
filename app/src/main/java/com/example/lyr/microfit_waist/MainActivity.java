@@ -14,57 +14,41 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.example.lyr.microfit_waist.Home.MainPagerAdapter;
+
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
 
-//    @BindView(R.id.vp)
-//    ViewPager vp;
-//    @BindView(R.id.li_program)
-//    LinearLayout li_program;
-//    @BindView(R.id.li_record)
-//    LinearLayout li_record;
-//    @BindView(R.id.li_admin)
-//    LinearLayout li_admin;
-//    @BindView(R.id.li_set)
-//    LinearLayout li_set;
-//    @BindView(R.id.line_program)
-//    LinearLayout line_program;
-//    @BindView(R.id.line_record)
-//    LinearLayout line_record;
-//    @BindView(R.id.line_admin)
-//    LinearLayout line_admin;
-//    @BindView(R.id.line_set)
-//    LinearLayout line_set;
-
-
+    @BindView(R.id.vp)
     ViewPager vp;
+    @BindView(R.id.li_program)
     LinearLayout li_program;
+    @BindView(R.id.li_record)
     LinearLayout li_record;
+    @BindView(R.id.li_admin)
     LinearLayout li_admin;
+    @BindView(R.id.li_set)
     LinearLayout li_set;
+    @BindView(R.id.line_program)
     LinearLayout line_program;
+    @BindView(R.id.line_record)
     LinearLayout line_record;
+    @BindView(R.id.line_admin)
     LinearLayout line_admin;
+    @BindView(R.id.line_set)
     LinearLayout line_set;
+
+    private MainPagerAdapter mPagerAdapter;
+    private int mSelectedPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        vp = (ViewPager)findViewById(R.id.vp);
-        li_program = (LinearLayout)findViewById(R.id.li_program);
-        li_record = (LinearLayout)findViewById(R.id.li_record);
-        li_admin = (LinearLayout)findViewById(R.id.li_admin);
-        li_set = (LinearLayout)findViewById(R.id.li_set);
-
-        line_program = (LinearLayout)findViewById(R.id.line_program);
-        line_record = (LinearLayout)findViewById(R.id.line_record);
-        line_admin = (LinearLayout)findViewById(R.id.line_admin);
-        line_set = (LinearLayout)findViewById(R.id.line_set);
-
+        ButterKnife.bind(this);
 
         li_program.setOnClickListener(mclicklistener);
         li_program.setTag(0);
@@ -75,11 +59,27 @@ public class MainActivity extends AppCompatActivity {
         li_set.setOnClickListener(mclicklistener);
         li_set.setTag(3);
 
+        mPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
 
-//        vp.setAdapter(new pagerAdapter(getSupportFragmentManager()));
-//
-//        vp.setCurrentItem(0);
+        vp.setAdapter(mPagerAdapter);
+        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                mSelectedPosition = position;
+
+                line_change(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     }
 
@@ -90,83 +90,42 @@ public class MainActivity extends AppCompatActivity {
         {
             int tag = (int) v.getTag();
 
-            switch (tag){
-                case 0:
-                    line_program.setBackgroundResource(R.color.colorAccent);
-                    line_record.setBackgroundResource(R.color.colorPrimary);
-                    line_admin.setBackgroundResource(R.color.colorPrimary);
-                    line_set.setBackgroundResource(R.color.colorPrimary);
-                    break;
-                case 1:
-                    line_program.setBackgroundResource(R.color.colorPrimary);
-                    line_record.setBackgroundResource(R.color.colorAccent);
-                    line_admin.setBackgroundResource(R.color.colorPrimary);
-                    line_set.setBackgroundResource(R.color.colorPrimary);
-                    break;
-                case 2:
-                    line_program.setBackgroundResource(R.color.colorPrimary);
-                    line_record.setBackgroundResource(R.color.colorPrimary);
-                    line_admin.setBackgroundResource(R.color.colorAccent);
-                    line_set.setBackgroundResource(R.color.colorPrimary);
-                    break;
-                case 3:
-                    line_program.setBackgroundResource(R.color.colorPrimary);
-                    line_record.setBackgroundResource(R.color.colorPrimary);
-                    line_admin.setBackgroundResource(R.color.colorPrimary);
-                    line_set.setBackgroundResource(R.color.colorAccent);
-                    break;
-            }
+            line_change(tag);
+
+            vp.setCurrentItem(tag);
+
         }
     };
 
-    private class pagerAdapter extends FragmentStatePagerAdapter
-    {
-        public pagerAdapter(android.support.v4.app.FragmentManager fm)
-        {
-            super(fm);
-        }
-        @Override
-        public android.support.v4.app.Fragment getItem(int position)
-        {
-            switch(position)
-            {
-                case 0:
 
-                    return new vp_program();
-
-                default:
-                    return null;
-            }
-        }
-        @Override
-        public int getCount()
-        {
-            return 4;
-        }
-    }
-
-
-    public static class vp_program extends Fragment
-    {
-        public vp_program()
-        {
-        }
-
-        @Override
-        public void onCreate(Bundle savedInstanceState)
-        {
-            super.onCreate(savedInstanceState);
-        }
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-            Log.d("TAG","DDDD");
-            RelativeLayout layout = (RelativeLayout) inflater.inflate(R.layout.activity_vp_program, container, false);
-            return layout;
+    public void line_change(int num){
+        switch (num){
+            case 0:
+                line_program.setBackgroundResource(R.color.colorAccent);
+                line_record.setBackgroundResource(R.color.colorPrimary);
+                line_admin.setBackgroundResource(R.color.colorPrimary);
+                line_set.setBackgroundResource(R.color.colorPrimary);
+                break;
+            case 1:
+                line_program.setBackgroundResource(R.color.colorPrimary);
+                line_record.setBackgroundResource(R.color.colorAccent);
+                line_admin.setBackgroundResource(R.color.colorPrimary);
+                line_set.setBackgroundResource(R.color.colorPrimary);
+                break;
+            case 2:
+                line_program.setBackgroundResource(R.color.colorPrimary);
+                line_record.setBackgroundResource(R.color.colorPrimary);
+                line_admin.setBackgroundResource(R.color.colorAccent);
+                line_set.setBackgroundResource(R.color.colorPrimary);
+                break;
+            case 3:
+                line_program.setBackgroundResource(R.color.colorPrimary);
+                line_record.setBackgroundResource(R.color.colorPrimary);
+                line_admin.setBackgroundResource(R.color.colorPrimary);
+                line_set.setBackgroundResource(R.color.colorAccent);
+                break;
         }
     }
-
-
 
 }
 
