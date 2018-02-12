@@ -1,33 +1,25 @@
-package com.example.lyr.microfit_waist.Home;
+package com.example.lyr.microfit_waist;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.lyr.microfit_waist.MainActivity;
-import com.example.lyr.microfit_waist.R;
+import com.example.lyr.microfit_waist.Home.ProgramFragment;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-/**
- * Created by lyr on 2018. 2. 12..
- */
+import butterknife.BindView;
 
-public class ProgramFragment extends BaseFragment {
+public class HomeActivity extends AppCompatActivity {
 
     private ListView listview;
     MainItemAdapter madapter = null;
@@ -39,45 +31,64 @@ public class ProgramFragment extends BaseFragment {
     //아이템 선택되었을 때 이미지 리스트
     private ArrayList<Integer> item_img_select;
     //리스트아이템 뷰
+    @BindView(R.id.noti_y)
+    Button noti_y;
     ImageView item_imgview;
     TextView item_mtxt;
     TextView item_txt;
 
     String[] str_item;
 
-
+    //메인화면으로 보낼 데이터
+    int home_num;
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        @SuppressLint("InflateParams")
-        View view = LayoutInflater.from(context).inflate(R.layout.programfragment, null);
-
+        setContentView(R.layout.activity_home);
         item_list = new ArrayList<String>();
         item_img = new ArrayList<Integer>();
         item_img_select = new ArrayList<Integer>();
-        item_list.add("걷기 (Gait),걷기 프로그램을 실행 합니다");
-        item_list.add("스쿼트 (Squat),스쿼트 프로그램을 실행 합니다");
-        item_list.add("계단오르내리기,계단오르내리기 프로그램을 실행 합니다");
-        item_img.add(R.drawable.ic_gait);
-        item_img.add(R.drawable.ic_squat);
-        item_img.add(R.drawable.ic_step);
-        item_img_select.add(R.drawable.ic_gait_press);
-        item_img_select.add(R.drawable.ic_squat_press);
-        item_img_select.add(R.drawable.ic_step_press);
+        item_list.add("프로그램,프로그램을 실행 합니다");
+        item_list.add("평가기록,평가기록을 보여 줍니다");
+        item_list.add("관리자확인,관리자 메뉴를 실행 합니다");
+        item_list.add("설정,설정 메뉴를 실행 합니다");
+        item_img.add(R.drawable.ic_program);
+        item_img.add(R.drawable.ic_record);
+        item_img.add(R.drawable.ic_admin);
+        item_img.add(R.drawable.ic_set);
+        item_img_select.add(R.drawable.ic_program_press);
+        item_img_select.add(R.drawable.ic_record_press);
+        item_img_select.add(R.drawable.ic_admin_press);
+        item_img_select.add(R.drawable.ic_set_press);
 
-        listview = (ListView) view.findViewById(R.id.list_program);
+        listview = (ListView) findViewById(R.id.list_home);
 
         madapter = new MainItemAdapter(getLayoutInflater(), item_list,item_img);
         listview.setAdapter(madapter);
 
-        return view;
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0:
+                        home_num = 0;
+                        break;
+                    case 1:
+                        home_num = 1;
+                        break;
+                    case 2:
+                        home_num = 2;
+                        break;
+                    case 3:
+                        home_num = 3;
+                        break;
+                }
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                intent.putExtra("home_num",home_num);
+                startActivity(intent);
+            }
+        });
     }
-
 
     class MainItemAdapter extends BaseAdapter {
         ArrayList<String> item_list;
@@ -146,5 +157,4 @@ public class ProgramFragment extends BaseFragment {
             return convertView;
         }
     }
-
 }

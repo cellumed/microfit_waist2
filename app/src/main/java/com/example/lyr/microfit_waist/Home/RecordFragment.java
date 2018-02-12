@@ -34,7 +34,7 @@ public class RecordFragment extends BaseFragment {
         @SuppressLint("InflateParams")
         View view = LayoutInflater.from(context).inflate(R.layout.recordfragment, null);
 
-        mTextView = (TextView) view.findViewById(R.id.two);
+
 
 
         return view;

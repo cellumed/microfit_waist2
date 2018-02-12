@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.lyr.microfit_waist.HomeActivity;
 import com.example.lyr.microfit_waist.MainActivity;
 import com.example.lyr.microfit_waist.R;
 
@@ -34,7 +35,7 @@ public class Act_noti extends AppCompatActivity {
         noti_y.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Act_noti.this,MainActivity.class);
+                Intent intent = new Intent(Act_noti.this, HomeActivity.class);
                 Act_noti.this.startActivity(intent);
                 Act_noti.this.finish();
             }

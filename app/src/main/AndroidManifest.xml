@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Home.Act_noti" />
-        <activity android:name=".Home.Act_EMS"></activity>
+        <activity android:name=".Home.Act_EMS" />
+        <activity android:name=".HomeActivity"></activity>
     </application>
 
 </manifest>

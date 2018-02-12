@@ -1,5 +1,6 @@
 package com.example.lyr.microfit_waist;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.vp)
     ViewPager vp;
+    @BindView(R.id.back)
+    ImageButton back;
     @BindView(R.id.li_program)
     LinearLayout li_program;
     @BindView(R.id.li_record)
@@ -50,17 +54,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        li_program.setOnClickListener(mclicklistener);
-        li_program.setTag(0);
-        li_record.setOnClickListener(mclicklistener);
-        li_record.setTag(1);
-        li_admin.setOnClickListener(mclicklistener);
-        li_admin.setTag(2);
-        li_set.setOnClickListener(mclicklistener);
-        li_set.setTag(3);
-
         mPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
-
         vp.setAdapter(mPagerAdapter);
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -80,6 +74,34 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        Intent intent = getIntent();
+        if(intent != null){
+            int home_num = intent.getIntExtra("home_num",0);
+            Log.d("TAG","HOME에서 넘어온 데이터 : "+home_num);
+            line_change(home_num);
+            vp.setCurrentItem(home_num);
+
+        }
+
+        li_program.setOnClickListener(mclicklistener);
+        li_program.setTag(0);
+        li_record.setOnClickListener(mclicklistener);
+        li_record.setTag(1);
+        li_admin.setOnClickListener(mclicklistener);
+        li_admin.setTag(2);
+        li_set.setOnClickListener(mclicklistener);
+        li_set.setTag(3);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
 
     }
 
