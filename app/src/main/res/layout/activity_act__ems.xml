@@ -88,10 +88,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:text="대퇴(상)"
-                    android:textSize="10sp"
+                    android:textSize="12sp"
                     android:textColor="#ffffff"
                     android:gravity="center"
-                    android:paddingTop="7dp"
                     android:background="#4484cd"/>
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -121,10 +120,8 @@
                         android:layout_height="wrap_content"
                         android:text="10"
                         android:textColor="#ffffff"
-                        android:textSize="16sp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_gravity="center_horizontal"
+                        android:textSize="23sp"
+                        android:layout_gravity="center"
                         android:id="@+id/txt_ds"/>
                     <ImageButton
                         android:layout_width="24dp"
@@ -151,10 +148,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:text="대퇴(하)"
-                   android:textSize="10sp"
+                   android:textSize="12sp"
                     android:textColor="#ffffff"
                     android:gravity="center"
-                    android:paddingTop="7dp"
                     android:background="#4484cd"/>
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -184,10 +180,8 @@
                         android:layout_height="wrap_content"
                         android:text="50"
                         android:textColor="#ffffff"
-                        android:textSize="16sp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_gravity="center_horizontal"
+                        android:textSize="23sp"
+                        android:layout_gravity="center"
                         android:id="@+id/txt_dh"/>
                     <ImageButton
                         android:layout_width="24dp"
@@ -213,10 +207,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:text="햄스트링(안)"
-                    android:textSize="10sp"
+                    android:textSize="12sp"
                     android:textColor="#ffffff"
                     android:gravity="center"
-                    android:paddingTop="7dp"
                     android:background="#4484cd"/>
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -246,10 +239,8 @@
                         android:layout_height="wrap_content"
                         android:text="50"
                         android:textColor="#ffffff"
-                        android:textSize="16sp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_gravity="center_horizontal"
+                        android:textSize="23sp"
+                        android:layout_gravity="center"
                         android:id="@+id/txt_ha"/>
                     <ImageButton
                         android:layout_width="24dp"
@@ -275,10 +266,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:text="햄스트링(밖)"
-                    android:textSize="10sp"
+                    android:textSize="12sp"
                     android:textColor="#ffffff"
                     android:gravity="center"
-                    android:paddingTop="7dp"
                     android:background="#4484cd"/>
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -308,10 +298,8 @@
                         android:layout_height="wrap_content"
                         android:text="50"
                         android:textColor="#ffffff"
-                        android:textSize="16sp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_gravity="center_horizontal"
+                        android:textSize="23sp"
+                        android:layout_gravity="center"
                         android:id="@+id/txt_hb"/>
                     <ImageButton
                         android:layout_width="24dp"

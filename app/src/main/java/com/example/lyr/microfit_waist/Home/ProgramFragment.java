@@ -2,26 +2,23 @@ package com.example.lyr.microfit_waist.Home;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.lyr.microfit_waist.MainActivity;
 import com.example.lyr.microfit_waist.R;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+
+import butterknife.BindView;
 
 /**
  * Created by lyr on 2018. 2. 12..
@@ -55,30 +52,39 @@ public class ProgramFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         @SuppressLint("InflateParams")
-        View view = LayoutInflater.from(context).inflate(R.layout.programfragment, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.adminfragment, null);
 
         item_list = new ArrayList<String>();
         item_img = new ArrayList<Integer>();
         item_img_select = new ArrayList<Integer>();
-        item_list.add("걷기 (Gait),걷기 프로그램을 실행 합니다");
-        item_list.add("스쿼트 (Squat),스쿼트 프로그램을 실행 합니다");
-        item_list.add("계단오르내리기,계단오르내리기 프로그램을 실행 합니다");
-        item_img.add(R.drawable.ic_gait);
-        item_img.add(R.drawable.ic_squat);
-        item_img.add(R.drawable.ic_step);
-        item_img_select.add(R.drawable.ic_gait_press);
-        item_img_select.add(R.drawable.ic_squat_press);
-        item_img_select.add(R.drawable.ic_step_press);
+        item_list.add("EMS,EMS");
+        item_list.add("EMG,EMG");
+        item_list.add("IMU,IMU");
+        item_img.add(R.drawable.ic_ems);
+        item_img.add(R.drawable.ic_emg);
+        item_img.add(R.drawable.ic_imu);
+        item_img_select.add(R.drawable.ic_ems_press);
+        item_img_select.add(R.drawable.ic_emg_press);
+        item_img_select.add(R.drawable.ic_imu_press);
 
-        listview = (ListView) view.findViewById(R.id.list_program);
+        listview = (ListView) view.findViewById(R.id.list_admin);
 
         madapter = new MainItemAdapter(getLayoutInflater(), item_list,item_img);
         listview.setAdapter(madapter);
 
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0 :
+                        Intent intent = new Intent(getActivity() , Act_EMS.class);
+                        startActivity(intent);
+                }
+            }
+        });
+
         return view;
     }
-
-
     class MainItemAdapter extends BaseAdapter {
         ArrayList<String> item_list;
         ArrayList<Integer> item_img;
@@ -148,3 +154,4 @@ public class ProgramFragment extends BaseFragment {
     }
 
 }
+

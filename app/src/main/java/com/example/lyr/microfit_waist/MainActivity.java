@@ -28,20 +28,16 @@ public class MainActivity extends AppCompatActivity {
     ViewPager vp;
     @BindView(R.id.back)
     ImageButton back;
+    @BindView(R.id.li_connect)
+    LinearLayout li_connect;
     @BindView(R.id.li_program)
     LinearLayout li_program;
-    @BindView(R.id.li_record)
-    LinearLayout li_record;
-    @BindView(R.id.li_admin)
-    LinearLayout li_admin;
     @BindView(R.id.li_set)
     LinearLayout li_set;
+    @BindView(R.id.line_connect)
+    LinearLayout line_connect;
     @BindView(R.id.line_program)
     LinearLayout line_program;
-    @BindView(R.id.line_record)
-    LinearLayout line_record;
-    @BindView(R.id.line_admin)
-    LinearLayout line_admin;
     @BindView(R.id.line_set)
     LinearLayout line_set;
 
@@ -85,14 +81,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        li_connect.setOnClickListener(mclicklistener);
+        li_connect.setTag(0);
         li_program.setOnClickListener(mclicklistener);
-        li_program.setTag(0);
-        li_record.setOnClickListener(mclicklistener);
-        li_record.setTag(1);
-        li_admin.setOnClickListener(mclicklistener);
-        li_admin.setTag(2);
+        li_program.setTag(1);
         li_set.setOnClickListener(mclicklistener);
-        li_set.setTag(3);
+        li_set.setTag(2);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,27 +117,18 @@ public class MainActivity extends AppCompatActivity {
     public void line_change(int num){
         switch (num){
             case 0:
-                line_program.setBackgroundResource(R.color.colorAccent);
-                line_record.setBackgroundResource(R.color.colorPrimary);
-                line_admin.setBackgroundResource(R.color.colorPrimary);
+                line_connect.setBackgroundResource(R.color.colorAccent);
+                line_program.setBackgroundResource(R.color.colorPrimary);
                 line_set.setBackgroundResource(R.color.colorPrimary);
                 break;
             case 1:
-                line_program.setBackgroundResource(R.color.colorPrimary);
-                line_record.setBackgroundResource(R.color.colorAccent);
-                line_admin.setBackgroundResource(R.color.colorPrimary);
+                line_connect.setBackgroundResource(R.color.colorPrimary);
+                line_program.setBackgroundResource(R.color.colorAccent);
                 line_set.setBackgroundResource(R.color.colorPrimary);
                 break;
             case 2:
+                line_connect.setBackgroundResource(R.color.colorPrimary);
                 line_program.setBackgroundResource(R.color.colorPrimary);
-                line_record.setBackgroundResource(R.color.colorPrimary);
-                line_admin.setBackgroundResource(R.color.colorAccent);
-                line_set.setBackgroundResource(R.color.colorPrimary);
-                break;
-            case 3:
-                line_program.setBackgroundResource(R.color.colorPrimary);
-                line_record.setBackgroundResource(R.color.colorPrimary);
-                line_admin.setBackgroundResource(R.color.colorPrimary);
                 line_set.setBackgroundResource(R.color.colorAccent);
                 break;
         }

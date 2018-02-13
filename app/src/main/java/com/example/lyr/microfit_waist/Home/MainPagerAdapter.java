@@ -19,10 +19,9 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
 
         mFragments = new SparseArray<>();
 
-        mFragments.put(0, new ProgramFragment());
-        mFragments.put(1, new RecordFragment());
-        mFragments.put(2, new AdminFragment());
-        mFragments.put(3, new SetFragment());
+        mFragments.put(0, new ConnectFragment());
+        mFragments.put(1, new ProgramFragment());
+        mFragments.put(2, new SetFragment());
     }
 
     @Override

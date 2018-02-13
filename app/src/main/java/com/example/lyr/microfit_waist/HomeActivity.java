@@ -13,8 +13,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.lyr.microfit_waist.Home.ProgramFragment;
-
 import java.util.ArrayList;
 
 import butterknife.BindView;

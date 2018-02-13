@@ -25,7 +25,37 @@
         android:layout_height="72dp"
         android:orientation="horizontal"
         android:background="#0d3d73"
-        android:weightSum="4">
+        android:weightSum="3">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:id="@+id/li_connect">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_tab_program"
+                android:background="#00000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:text="장치연결"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:layout_marginBottom="14dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:orientation="vertical"
+                android:background="#c6ff00"
+                android:id="@+id/line_connect"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -52,68 +82,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:orientation="vertical"
-                android:background="#c6ff00"
+                android:background="#0d3d73"
                 android:id="@+id/line_program"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:gravity="center"
-            android:id="@+id/li_record">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_tab_record"
-                android:background="#00000000"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingTop="10dp"
-                android:text="평가기록"
-                android:textColor="#ffffff"
-                android:textSize="14sp"
-                android:layout_marginBottom="14dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:orientation="vertical"
-                android:background="#0d3d73"
-                android:id="@+id/line_record"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:gravity="center"
-            android:id="@+id/li_admin">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_tab_admin"
-                android:background="#00000000"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingTop="10dp"
-                android:text="관리자확인"
-                android:textColor="#ffffff"
-                android:textSize="14sp"
-                android:layout_marginBottom="14dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:orientation="vertical"
-                android:background="#0d3d73"
-                android:id="@+id/line_admin"/>
         </LinearLayout>
 
         <LinearLayout
