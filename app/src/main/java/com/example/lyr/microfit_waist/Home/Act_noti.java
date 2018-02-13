@@ -36,6 +36,7 @@ public class Act_noti extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Act_noti.this, HomeActivity.class);
+
                 Act_noti.this.startActivity(intent);
                 Act_noti.this.finish();
             }
