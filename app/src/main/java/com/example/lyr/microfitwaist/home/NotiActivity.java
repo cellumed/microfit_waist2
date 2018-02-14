@@ -1,4 +1,4 @@
-package com.example.lyr.microfit_waist.Home;
+package com.example.lyr.microfitwaist.home;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,23 +8,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.lyr.microfit_waist.HomeActivity;
-import com.example.lyr.microfit_waist.MainActivity;
-import com.example.lyr.microfit_waist.R;
+import com.example.lyr.microfitwaist.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class Act_noti extends AppCompatActivity {
+public class NotiActivity extends AppCompatActivity {
 
 
     @BindView(R.id.noti_y)
-    Button noti_y;
+    Button btnOk;
+    @BindView(R.id.noti_n)
+    Button btnCancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_act_noti);
+        setContentView(R.layout.activity_noti);
 
         ButterKnife.bind(this);
 
@@ -32,13 +32,18 @@ public class Act_noti extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.argb(255,9,46,87));
         }
 
-        noti_y.setOnClickListener(new View.OnClickListener() {
+        btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Act_noti.this, MainActivity.class);
-
-                Act_noti.this.startActivity(intent);
-                Act_noti.this.finish();
+                Intent intent = new Intent(NotiActivity.this, MainActivity.class);
+                NotiActivity.this.startActivity(intent);
+                NotiActivity.this.finish();
+            }
+        });
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 

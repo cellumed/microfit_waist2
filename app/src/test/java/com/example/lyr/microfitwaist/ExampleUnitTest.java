@@ -1,4 +1,4 @@
-package com.example.lyr.microfit_waist;
+package com.example.lyr.microfitwaist;
 
 import org.junit.Test;
 

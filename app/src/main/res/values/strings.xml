@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MicroFit_waist</string>
+    <string name="ems_title">재활 운동</string>
+    <string name="ems_ds">대퇴(상)</string>
+    <string name="ems_dh">대퇴(하)</string>
+    <string name="ems_ha">햄스트링(안)</string>
+    <string name="ems_hb">햄스트링(밖)</string>
+    <string name="noti_title">주의사항</string>
+    <string name="noti_btn_n">취소</string>
+    <string name="noti_btn_y">확인</string>
+    <string name="main_tab1">장치연결</string>
+    <string name="main_tab2">프로그램</string>
+    <string name="main_tab3">설  정</string>
+
+
 </resources>

@@ -1,4 +1,4 @@
-package com.example.lyr.microfit_waist;
+package com.example.lyr.microfitwaist;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

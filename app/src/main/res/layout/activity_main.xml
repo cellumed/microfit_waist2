@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lyr.microfit_waist.MainActivity"
+    tools:context="com.example.lyr.microfitwaist.home.MainActivity"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="vertical"
         android:padding="16dp"
-        android:background="#0d3d73">
+        android:background="@color/colorPrimary">
         <ImageButton
             android:layout_width="24dp"
             android:layout_height="24dp"
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:orientation="horizontal"
-        android:background="#0d3d73"
+        android:background="@color/colorPrimary"
         android:weightSum="3">
         <LinearLayout
             android:layout_width="0dp"
@@ -44,15 +44,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:text="장치연결"
-                android:textColor="#ffffff"
+                android:text="@string/main_tab1"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 android:layout_marginBottom="14dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:orientation="vertical"
-                android:background="#c6ff00"
+                android:background="@color/colorAccent"
                 android:id="@+id/line_connect"/>
         </LinearLayout>
 
@@ -74,15 +74,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:text="프로그램"
-                android:textColor="#ffffff"
+                android:text="@string/main_tab2"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 android:layout_marginBottom="14dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:orientation="vertical"
-                android:background="#0d3d73"
+                android:background="@color/colorPrimary"
                 android:id="@+id/line_program"/>
         </LinearLayout>
 
@@ -104,15 +104,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:text="설  정"
-                android:textColor="#ffffff"
+                android:text="@string/main_tab3"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 android:layout_marginBottom="14dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:orientation="vertical"
-                android:background="#0d3d73"
+                android:background="@color/colorPrimary"
                 android:id="@+id/line_set"/>
         </LinearLayout>
     </LinearLayout>

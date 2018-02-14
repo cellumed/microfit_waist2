@@ -1,4 +1,4 @@
-package com.example.lyr.microfit_waist.Home;
+package com.example.lyr.microfitwaist.home;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;

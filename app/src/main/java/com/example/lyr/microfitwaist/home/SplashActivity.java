@@ -1,4 +1,4 @@
-package com.example.lyr.microfit_waist.Home;
+package com.example.lyr.microfitwaist.home;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -8,9 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
-import android.widget.ImageView;
 
-import com.example.lyr.microfit_waist.R;
+import com.example.lyr.microfitwaist.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -23,13 +22,6 @@ public class SplashActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
 
-        try {
-            PackageInfo pi = getApplicationContext().getPackageManager().getPackageInfo(getApplicationContext().getPackageName(), 0);
-            //Log.i("pain0928", "Name: " + pi.packageName + " povider:" + pi.providers);
-        } catch(PackageManager.NameNotFoundException e) {
-            Log.e("SP", "Package Name don't find");
-        }
-
         startHandler();
     }
 
@@ -37,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainIntent = new Intent(SplashActivity.this, Act_noti.class);
+                Intent mainIntent = new Intent(SplashActivity.this, NotiActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
                 SplashActivity.this.finish();
             }

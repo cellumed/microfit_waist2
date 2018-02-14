@@ -3,7 +3,11 @@
     <color name="colorPrimary">#0d3d73</color>
     <color name="colorPrimaryDark">#0d3d73</color>
     <color name="background">#1565c0</color>
+    <color name="ems_blue">#4484cd</color>
     <color name="colorAccent">#c6ff00</color>
+    <color name="btn1">#dcdcdc</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 
 
 </resources>
